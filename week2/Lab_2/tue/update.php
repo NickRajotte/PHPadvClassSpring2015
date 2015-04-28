@@ -8,7 +8,7 @@ include './bootstrap.php'; ?>
         <title></title>
     </head>
     <body>
-          <a href="EmailTest.php">EmailTest</a><br/>
+          <a href="EmailTest.php">Email Test</a><br/>
         <?php
         
         $dbConfig = array(
@@ -81,7 +81,8 @@ include './bootstrap.php'; ?>
         ?>
         
         
-         <h3>Update Email</h3>
+         
+          <h3>Update Email</h3>
         <form action="#" method="post">
              <input type="hidden" name="emailid" value="<?php echo $emailid; ?>" />
              <br />

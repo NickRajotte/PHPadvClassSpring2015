@@ -9,7 +9,7 @@ include './bootstrap.php'; ?>
     </head>
     <body>
         
-        <a href="AddEmailType.php">Add/deleteEmailType</a><br/>
+        <a href="AddEmailType.php">Add/Delete Email Type</a><br/>
        
         
         <?php
@@ -33,6 +33,7 @@ include './bootstrap.php'; ?>
          $emailDAO = new EmailDAO($db);
          $emailTypes = $emailTypeDAO->getAllRows();
         
+         
          $util = new Util();
          
           if ( $util->isPostRequest() ) {
@@ -87,6 +88,8 @@ include './bootstrap.php'; ?>
             <br /><br />
             <label>Email Type:</label>
             <select name="emailtypeid">
+                
+            <label>Update/Delete</label>    
             <?php 
                 foreach ($emailTypes as $value) {
                     if ( $value->getEmailtypeid() == $emailTypeid ) {

@@ -9,7 +9,7 @@ include './bootstrap.php'; ?>
     </head>
     <body>
         <br/><br/>
-        <a href="EmailTest.php">EmailTest</a><br/>
+        <a href="EmailTest.php">Email Test</a><br/>
         <?php
         
         $dbConfig = array(
@@ -45,7 +45,7 @@ include './bootstrap.php'; ?>
         
          <h3>Add email type</h3>
         <form action="#" method="post">
-            <label>email Type:</label> 
+            <label>Email Type:</label> 
             <input type="text" name="emailtype" value="<?php echo $emailType; ?>" placeholder="" />
             <br /><br />
             <label>Active:</label>
