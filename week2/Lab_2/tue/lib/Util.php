@@ -3,7 +3,7 @@ namespace week2\nrajotte;
 /**
  * Util - functions used to help with the over all application
  *
- * @author Jack
+ * @author MisterSpock
  */
 class Util {
     

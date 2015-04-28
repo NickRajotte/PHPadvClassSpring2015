@@ -10,7 +10,7 @@ use PDO;
 /**
  * Description of EmailTypeDAO
  *
- * @author Jack
+ * @author MisterSpock
  */
 class EmailTypeDAO implements IDAO  {
     //put your code here

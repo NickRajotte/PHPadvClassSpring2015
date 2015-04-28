@@ -9,7 +9,7 @@ namespace week2\nrajotte;
 /**
  * Description of EmailTypeService
  *
- * @author Jack
+ * @author MisterSpock
  */
 class EmailTypeService {
     //put your code here

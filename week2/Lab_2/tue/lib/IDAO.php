@@ -8,7 +8,7 @@ namespace week2\nrajotte;
 
 /**
  *
- * @author Jack
+ * @author MisterSpock
  */
 interface IDAO {
     //put your code here

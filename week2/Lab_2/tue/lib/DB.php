@@ -4,7 +4,7 @@ use PDO;
 /**
  * DB is the general class to connection to our database
  *
- * @author Jack
+ * @author MisterSpock
  */
 
 

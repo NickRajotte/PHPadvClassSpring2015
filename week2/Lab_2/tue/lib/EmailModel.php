@@ -9,7 +9,8 @@ namespace week2\nrajotte;
 /**
  * Description of EmailModel
  *
- * @author Jack
+ * @author MisterSpock
+ *
  */
 class EmailModel implements IModel {
     //put your code here

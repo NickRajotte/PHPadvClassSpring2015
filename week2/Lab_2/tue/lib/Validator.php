@@ -5,7 +5,7 @@ namespace week2\nrajotte;
  * 
  * A collection of functions used to validate data
  *
- * @author Jack
+ * @author MisterSpock
  */
 class Validator {
 
