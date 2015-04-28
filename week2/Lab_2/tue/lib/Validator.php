@@ -1,5 +1,5 @@
 <?php
-namespace week2\jrola;
+namespace week2\nrajotte;
 /**
  * Validator Class
  * 

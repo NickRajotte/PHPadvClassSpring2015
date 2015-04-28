@@ -1,5 +1,5 @@
 <?php
-namespace week2\jrola;
+namespace week2\nrajotte;
 use PDO;
 /*
  * To change this license header, choose License Headers in Project Properties.
