@@ -8,7 +8,7 @@ include './bootstrap.php'; ?>
         <title></title>
     </head>
     <body>
-          <a href="EmailTest.php">Email Test</a><br/>
+          <a href="EmailTest.php">Add Email</a><br/>
         <?php
         
         $dbConfig = array(
