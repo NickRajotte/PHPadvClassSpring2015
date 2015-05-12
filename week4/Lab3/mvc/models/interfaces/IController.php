@@ -1,8 +1,14 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *
+ * @author MisterSpock
  */
 
+namespace App\models\interfaces;
+
+use App\models\interfaces\IService;
+
+interface IController {
+    public function execute(IService $scope);
+}
