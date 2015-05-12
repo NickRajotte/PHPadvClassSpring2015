@@ -13,9 +13,7 @@ class emailTypeDB {
    
     public function Save($emailType)
     {
-        /* Start by creating the classes and files you need
-         * 
-         */
+        
         $util = new Util();
         $validator = new Validator();   
         /*
