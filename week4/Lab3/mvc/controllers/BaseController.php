@@ -9,7 +9,7 @@
 /**
  * Description of BaseController
  *
- * @author User
+ * @author MisterSpock
  */
 
 namespace APP\controller;
