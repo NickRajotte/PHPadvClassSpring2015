@@ -1,9 +1,8 @@
 <?php
-
 /**
- * Description of PhoneTypeRestServer
+ * Description of EmailTypeRestServer
  *
- * @author User
+ * @author MisterSpock
  */
 
 namespace API\models\services;
@@ -48,7 +47,7 @@ class RestServer implements IService {
         
         header("Access-Control-Allow-Orgin: *");
         header("Access-Control-Allow-Methods: GET, POST, UPDATE, DELETE");
-        header("Content-Type: application/json; charset=utf8");
+        header("Content-Type: application/json");
                 
         set_exception_handler(array($this, 'handleException'));
         
@@ -70,7 +69,6 @@ class RestServer implements IService {
         if ( isset($restArgs[0]) && is_numeric($restArgs[0]) ) {
             $this->model->setId($restArgs[0]);
         }
-       
     }
     
     public function authorized() {  
@@ -105,8 +103,7 @@ class RestServer implements IService {
             $status = 200;
         } 
         
-        return $this->payload($data, $status);
-        
+        return $this->payload($data, $status);   
     }
     
     protected function payload($data, $status = 200) {
@@ -118,7 +115,6 @@ class RestServer implements IService {
         return $this->getFullJSONReponse();
     }
     
-    
     protected function getHTTPVerb(){        
         
         $verb = filter_input(INPUT_SERVER, 'REQUEST_METHOD');        
@@ -126,66 +122,30 @@ class RestServer implements IService {
         
         if ( !in_array($verb, $verbs_allowed) ) {
             throw new BadRequestException("Unexpected Header Requested ". $verb);
-        }
-               
+        }      
         return $verb;
     }
-    
-    
+      
     protected function getHTTPData() {
         $data = array();// file_get_contents("php://input");
         
         $verb = $this->getHTTPVerb();
-        
-        /*
-         * set always_populate_raw_post_data = -1 so you can pass json
-         * to your rest server instead of post data         * 
-         *
-        if( strpos(filter_input(INPUT_SERVER, 'CONTENT_TYPE'), "application/json") !== false) {
-            $data = json_decode(trim(file_get_contents('php://input')), true);
-            $this->checkJSON();
-        } else { 
-        */
-            switch($verb) {
-                case 'DELETE':
-                case 'POST':
-                    $data = filter_input_array(INPUT_POST);
-                    break;
-                case 'GET':
-                    $data = filter_input_array(INPUT_GET);
-                    break;
-                case 'PUT':
-                    parse_str(file_get_contents('php://input'), $data);            
-                    break;       
-            }
-        
-         //}
-        
+                
+        switch($verb) {
+            case 'DELETE':
+            case 'POST':
+                $data = filter_input_array(INPUT_POST);
+                break;
+            case 'GET':
+                $data = filter_input_array(INPUT_GET);
+                break;
+            case 'PUT':
+                parse_str(file_get_contents('php://input'), $data);            
+                break;       
+        }       
         return $data;
     }
-    
-    
-    protected function checkJSON() {
-         switch ( json_last_error() ) {
-          case JSON_ERROR_NONE:
-          { //data UTF-8 compliant
-            //tell client to recieve JSON data and send           
-          }
-          break;
-          case JSON_ERROR_SYNTAX:
-          case JSON_ERROR_UTF8:
-          case JSON_ERROR_DEPTH:
-          case JSON_ERROR_STATE_MISMATCH:
-          case JSON_ERROR_CTRL_CHAR:
-              throw new BadRequestException(json_last_error_msg());           
-          break;
-          default:
-             throw new BadRequestException('JSON encode error Unknown error');
-          break;
-        }
-    }
-    
-    
+
     protected function setStatusCode($code) {       
         if ( isset($this->getStatusCodes()[$code]) ) {
             $this->response->setStatus_code($code);
@@ -198,10 +158,7 @@ class RestServer implements IService {
     }
    
     protected function getFullJSONReponse() {
-        
-        $json = json_encode($this->getFullReponse(), JSON_PRETTY_PRINT);
-        
-        return $json;
+        return json_encode($this->getFullReponse(), JSON_PRETTY_PRINT);
     }
     
     protected function getStatusCodes() {
@@ -211,8 +168,7 @@ class RestServer implements IService {
     protected function getStatusMessage($code) {
         return ( isset($this->status_codes[$code]) ? $this->status_codes[$code] : $this->status_codes[500] );
     }
-    
-    
+
     
     /**
     * Exception handler.
@@ -249,10 +205,8 @@ class RestServer implements IService {
         echo $this->payload(null, $status);
         exit();
    }
-   
-   
+
     protected function getLog() {
         return $this->log;
-    }
-    
+    }    
 }

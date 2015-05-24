@@ -13,6 +13,7 @@ $auth = $key.':';
 $method = $consumeAPI->getHTTPVerb();
 $data = $consumeAPI->getHTTPData();
 
+// make sure the url is correct.  Your folder name might not be called PHPadvClassSpring2015
 $url = $consumeAPI->endpoint('http://localhost/PHPadvClassSpring2015/week5/demo/api/v1');
 
 $consumeAPI->callAPI($method, $url, $data, $auth);
