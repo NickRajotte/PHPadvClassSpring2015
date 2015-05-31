@@ -2,7 +2,7 @@
 /**
  * Description of ScopeVariableNotFoundException
  *
- * @author MisterSpock
+ * @author GFORTI
  */
 namespace API\models\services;
 

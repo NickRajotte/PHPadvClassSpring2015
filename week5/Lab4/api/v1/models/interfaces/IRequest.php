@@ -1,9 +1,10 @@
 <?php
+
+
 /**
  *
- * @author MisterSpock
+ * @author User
  */
-
 namespace API\models\interfaces;
 interface IRequest {
    

@@ -2,7 +2,7 @@
 /**
  * Description of EmailTypeDAO
  *
- * @author MisterSpock
+ * @author User
  */
 
 namespace API\models\services;
@@ -43,8 +43,10 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
              $results = $stmt->fetch(PDO::FETCH_ASSOC);
              $model->reset()->map($results);
          }
+         
          return $model;
     }
+    
     
     public function create(IModel $model) {
                  
@@ -62,9 +64,12 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
                 return true;
              }
          }
+                  
+         
          return false;
     }
-
+    
+    
      public function update(IModel $model) {
                  
          $db = $this->getDB();
@@ -85,7 +90,9 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
                  $error = implode(",", $db->errorInfo());
                  $this->getLog()->logError($error);
              }
+             
          } 
+         
          return false;
     }
     
@@ -100,6 +107,7 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
             $error = implode(",", $db->errorInfo());
             $this->getLog()->logError($error);
         }
+         
          return false;
     }
     
@@ -121,5 +129,8 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
         
         $stmt->closeCursor();
          return $values;
-    }  
+    }
+     
+    
+     
 }

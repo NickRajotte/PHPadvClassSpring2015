@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Description of ConflictRequestException
  *
- * @author MisterSpock
+ * @author User
  */
 namespace API\models\services;
 

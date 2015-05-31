@@ -32,7 +32,7 @@
          <br />
         <br />
         Data(optional):<br />        
-        <textarea name="data">emailtypeid=4&Emailtype=oktesting&Active=1</textarea>
+        <textarea name="data">emailtypeid=7&Emailtype=po56stest&Active=1</textarea>
         <br />
         <br />
         <button>Make Call</button>

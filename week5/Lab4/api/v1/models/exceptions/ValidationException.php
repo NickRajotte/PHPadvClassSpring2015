@@ -2,7 +2,7 @@
 /**
  * Description of ValidationException
  *
- * @author MisterSpock
+ * @author User
  */
 
 namespace API\models\services;
@@ -23,4 +23,5 @@ class ValidationException extends Exception{
     public function getErrors(){
         return $this->errors;
     }
+
 }

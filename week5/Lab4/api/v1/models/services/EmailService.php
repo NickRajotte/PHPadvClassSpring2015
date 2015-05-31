@@ -2,7 +2,7 @@
 /**
  * Description of EmailService
  *
- * @author MisterSpock
+ * @author GFORTI
  */
 
 namespace API\models\services;
@@ -41,6 +41,7 @@ class EmailService implements IService {
         $this->emailTypeService = $service;
     }
     
+    
     function getModel() {
         return $this->model;
     }
@@ -60,10 +61,6 @@ class EmailService implements IService {
     public function getAllEmailTypes() {       
         return $this->getEmailTypeService()->getAllRows();   
         
-    }
-    
-    public function idExisit($id) {
-        return $this->getEmailDAO()->idExisit($id);
     }
     
      public function getAllRows() {       
@@ -94,7 +91,13 @@ class EmailService implements IService {
         if ( !$this->getValidator()->activeIsValid($model->getActive()) ) {
             $errors[] = 'Email active is invalid';
         }
+       
+        
         return $errors;
+    }
+    
+    public function idExist($id) {
+        return $this->getEmailDAO()->idExisit($id);
     }
     
     public function read($id) {
@@ -105,6 +108,7 @@ class EmailService implements IService {
         return $this->getEmailDAO()->delete($id);
     }
     
+    
      public function update(IModel $model) {
         
         if ( count($this->validate($model)) === 0 ) {
@@ -113,7 +117,10 @@ class EmailService implements IService {
         return false;
     }
     
+    
      public function getNewEmailModel() {
         return clone $this->getModel();
     }
+    
+    
 }

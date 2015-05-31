@@ -1,4 +1,5 @@
 <?php
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,7 +9,7 @@
 /**
  * Description of RestAPIModel
  *
- * @author MisterSpock
+ * @author GFORTI
  */
 
 namespace API\models\services;
@@ -63,4 +64,6 @@ class RestServerModel extends BaseModel {
     function setEndpoint($endpoint) {
         $this->endpoint = $endpoint;
     }
+
+
 }

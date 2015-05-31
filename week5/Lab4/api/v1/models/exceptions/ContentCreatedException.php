@@ -2,7 +2,7 @@
 /**
  * Description of ContentCreatedException
  *
- * @author MisterSpock
+ * @author User
  */
 namespace API\models\services;
 

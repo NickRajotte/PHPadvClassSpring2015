@@ -1,4 +1,5 @@
 <?php
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,9 +9,8 @@
 /**
  * Description of BaseModel
  *
- * @author MisterSpock
+ * @author User
  */
-
 
 namespace API\models\services;
 
@@ -36,7 +36,8 @@ abstract class BaseModel implements IModel {
         foreach ($class_methods as $method_name) {
            if ( strrpos($method_name, 'set', -strlen($method_name)) !== FALSE ) {
                $this->$method_name('');
-           }  
+           }
+            
         } 
          return $this;
     }
@@ -52,6 +53,10 @@ abstract class BaseModel implements IModel {
                 $values[$var_name] = $this->$method_name();
             }           
         }
+
         return $values; 
+        
     }
+    
+    
 }

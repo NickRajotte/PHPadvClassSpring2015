@@ -1,4 +1,5 @@
 <?php
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,7 +9,7 @@
 /**
  * Description of Log
  *
- * @author MisterSpock
+ * @author GFORTI
  */
 
 namespace API\models\services;
@@ -49,5 +50,8 @@ class FileLogging implements ILogging {
     
      public function logError($data) {
        return $this->_log($data, 'error');
-    } 
+    }
+    
+   
+    
 }

@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Description of BadRequestException
  *
- * @author MisterSpock
+ * @author User
  */
 namespace API\models\services;
 

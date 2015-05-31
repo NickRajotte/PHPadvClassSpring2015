@@ -2,7 +2,7 @@
 /**
  * Description of UnauthorizedException
  *
- * @author MisterSpock
+ * @author User
  */
 namespace API\models\services;
 

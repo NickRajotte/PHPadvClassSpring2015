@@ -2,7 +2,7 @@
 /**
  * Description of NoContentRequestException
  *
- * @author MisterSpock
+ * @author User
  */
 
 namespace API\models\services;

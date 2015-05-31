@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Description of EmailModel
  *
- * @author MisterSpock
+ * @author GFORTI
  */
 
 namespace API\models\services;
@@ -82,4 +83,5 @@ class EmailModel extends BaseModel {
     function setActive($active) {
         $this->active = $active;
     }
+    
 }

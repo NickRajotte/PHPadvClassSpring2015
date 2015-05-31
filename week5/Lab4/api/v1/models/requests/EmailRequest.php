@@ -2,7 +2,7 @@
 /**
  * Description of EmailRequest
  *
- * @author MisterSpock
+ * @author User
  */
 
 namespace API\models\services;
@@ -36,7 +36,7 @@ class EmailRequest implements IRequest {
         $id = intval($model->getId());
         
         if ( $id > 0 ) { 
-            if ( $this->service->idExisit($model->getId()) ) {
+            if ( $this->service->idExist($model->getId()) ) {
                 return $this->service->read($model->getId())->getAllPropteries();
             } else {
                 throw new NoContentRequestException($id . ' ID does not exist');
@@ -65,6 +65,13 @@ class EmailRequest implements IRequest {
         if ( $this->service->update($emailModel) ) {
             throw new ContentCreatedException('Created');           
         }
+                
+        $errors = $this->service->validate($emailModel);
+        
+        if ( count($errors) > 0 ) {
+            throw new ValidationException($errors, 'Email Not Updated');
+        }        
+        
         throw new ConflictRequestException('New Email Not Updated for id ' . $id);
     }
     

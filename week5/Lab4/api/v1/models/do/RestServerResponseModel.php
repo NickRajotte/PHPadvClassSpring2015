@@ -1,11 +1,13 @@
 <?php
+
 /**
  * Description of RestServerResponseModel
  *
- * @author MisterSpock
+ * @author User
  */
 
 namespace API\models\services;
+
 
 class RestServerResponseModel extends BaseModel {
    
@@ -54,5 +56,6 @@ class RestServerResponseModel extends BaseModel {
     
     function setData($data) {
         $this->data = $data;
-    } 
+    }
+    
 }

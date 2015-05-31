@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Description of BaseDAO
  *
- * @author MisterSpock
+ * @author User
  */
 
 namespace API\models\services;
@@ -15,6 +16,7 @@ abstract class BaseDAO {
     protected $DB = null;
     protected $model;
     protected $log = null;
+
 
     protected function setDB(PDO $DB) {        
         $this->DB = $DB;
@@ -42,4 +44,5 @@ abstract class BaseDAO {
         }
         
     }  
+
 }

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,7 +9,7 @@
 /**
  * Description of IModel
  *
- * @author MisterSpock
+ * @author User
  */
 namespace API\models\interfaces;
 

@@ -3,7 +3,7 @@
 /**
  * Description of EmailtypeController
  *
- * @author 000847713
+ * @author User
  */
 
 namespace API\models\services;
@@ -38,7 +38,7 @@ class EmailtypeRequest implements IRequest {
     
     public function GET( IModel $model ) {
         $id = intval($model->getId());
-//        var_dump($model);
+        
         if ( $id > 0 ) { 
             if ( $this->service->idExist($model->getId()) ) {
                 return $this->service->read($model->getId())->getAllPropteries();
@@ -52,6 +52,7 @@ class EmailtypeRequest implements IRequest {
         foreach ($data as $value) {
             $values[] = $value->getAllPropteries();
         }
+        
         return $values;
     }
     

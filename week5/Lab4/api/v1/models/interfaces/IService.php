@@ -1,11 +1,13 @@
 <?php
+
 /**
  * Description of IService
  *
- * @author MisterSpock
+ * @author User
  */
 
 namespace API\models\interfaces;
+
 
 interface IService {
     //put your code here

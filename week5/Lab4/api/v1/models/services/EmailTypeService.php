@@ -1,8 +1,9 @@
 <?php
+
 /**
  * Description of EmailTypeService
  *
- * @author MisterSpock
+ * @author User
  */
 
 namespace API\models\services;
@@ -32,7 +33,8 @@ class EmailTypeService implements IService {
      function setModel(IModel $model) {
          $this->model = $model;
      }
- 
+     
+     
      function getDAO() {
          return $this->DAO;
      }
@@ -46,6 +48,7 @@ class EmailTypeService implements IService {
         $this->setValidator($validator);
         $this->setModel($model);
     }
+    
     
     public function getAllRows($limit = "", $offset = "") {
         return $this->getDAO()->getAllRows($limit, $offset);
@@ -87,11 +90,16 @@ class EmailTypeService implements IService {
                
         if ( !$this->getValidator()->activeIsValid($model->getActive()) ) {
             $errors[] = 'Email active is invalid';
-        }       
+        }
+       
+        
         return $errors;
     }
+    
     
     public function getNewEmailTypeModel() {
         return clone $this->getModel();
     }
+    
+    
 }

@@ -3,7 +3,7 @@
 /**
  * Description of RestConsume
  *
- * @author MisterSpock
+ * @author User
  */
 
 namespace API\models\services;
@@ -77,11 +77,14 @@ class RestProxy implements IService {
         $this->setHeaders($httpCode);
         echo $result;
     }
-
+     
+     
+    
     public function getHTTPVerb() { 
         return filter_input(INPUT_SERVER, 'REQUEST_METHOD');
     }
-      
+    
+    
     public function getHTTPData() {
         $data = array();
         
@@ -102,7 +105,8 @@ class RestProxy implements IService {
        
         return $data;
     }
-       
+     
+    
     public function endpoint($url) {
         return $url.DIRECTORY_SEPARATOR.filter_input(INPUT_GET, 'resource');        
     }
@@ -111,5 +115,6 @@ class RestProxy implements IService {
     public function getOrigin() {
         // Requests from the same server don't have a HTTP_ORIGIN header
         return ( NULL !== filter_input(INPUT_SERVER, 'HTTP_ORIGIN') ? filter_input(INPUT_SERVER, 'HTTP_ORIGIN') : filter_input(INPUT_SERVER, 'SERVER_NAME') );        
-    }   
+    }
+     
 }
