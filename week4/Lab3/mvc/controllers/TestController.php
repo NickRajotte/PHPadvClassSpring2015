@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Description of TestController
  *
@@ -11,15 +10,12 @@ namespace APP\controller;
 use App\models\interfaces\IController;
 use App\models\interfaces\IService;
 
-
-
 class TestController extends BaseController implements IController {
     
     protected $service;
     
     public function __construct( IService $TestService ) {                
-        $this->service = $TestService;     
-        
+        $this->service = $TestService;       
     }
     
       public function execute(IService $scope) {
@@ -28,7 +24,6 @@ class TestController extends BaseController implements IController {
                $this->data['email'] = filter_input(INPUT_POST, 'email');
                
                $this->data['emailvalid'] = $this->service->validateForm($this->data['email']);
-               
           }
           
           $this->data['test1'] = 'hello';
@@ -38,5 +33,4 @@ class TestController extends BaseController implements IController {
           $page = 'test';
           return $this->view($page, $scope);          
       }
-    
 }

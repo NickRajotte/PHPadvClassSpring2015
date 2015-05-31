@@ -6,8 +6,7 @@
     </head>
     <body>
         <?php
-        // put your code here
-                
+   
          if ( $scope->util->isPostRequest() ) {
              
              if ( isset($scope->view['errors']) ) {
@@ -21,22 +20,22 @@
              if ( isset($scope->view['deleted']) && $scope->view['deleted'] ) {
                   echo 'Email deleted';
              }
-             
          }
         
             $email = $scope->view['model']->getEmail();
             $active = $scope->view['model']->getActive();
-            $emailTypeid = $scope->view['model']->getEmailtypeid();
+            $EmailTypeid = $scope->view['model']->getEmailtypeid();
         ?>
-        
-        <h3>Add email</h3>
+        <br />
+        <a href="emailtype">Email Type</a>
+        <br />
+        <h3>Add Email</h3>
         <form action="#" method="post">
             <label>Email:</label>            
             <input type="text" name="email" value="<?php echo $email; ?>" placeholder="" />
             <br /><br />
             <label>Active:</label>
             <input type="number" max="1" min="0" name="active" value="<?php echo $active; ?>" />
-            
             <br /><br />
             <label>Email Type:</label>
             <select name="emailtypeid">
@@ -50,14 +49,11 @@
                 }
             ?>
             </select>
-            
+
              <br /><br />
             <input type="hidden" name="action" value="create" />
             <input type="submit" value="Submit" />
         </form>
-        
-        
-        
          <br />
          <br />
          
@@ -82,10 +78,6 @@
                 }
                 echo '</table>';
             }
-           
-           
-
          ?>
-            
     </body>
 </html>

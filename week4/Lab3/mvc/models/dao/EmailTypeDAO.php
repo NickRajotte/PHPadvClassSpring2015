@@ -2,7 +2,7 @@
 /**
  * Description of EmailTypeDAO
  *
- * @author MisterSpock
+ * @author 000847713
  */
 
 namespace App\models\services;
@@ -42,8 +42,7 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
          if ( $stmt->execute(array(':emailtypeid' => $id)) && $stmt->rowCount() > 0 ) {
              $results = $stmt->fetch(PDO::FETCH_ASSOC);
              $model->reset()->map($results);
-         }
-         
+         } 
          return $model;
     }
     
@@ -64,12 +63,9 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
                 return true;
              }
          }
-                  
-         
          return false;
     }
-    
-    
+        
      public function update(IModel $model) {
                  
          $db = $this->getDB();
@@ -78,8 +74,7 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
                           ":active" => $model->getActive(),
                           ":emailtypeid" => $model->getEmailtypeid()
                     );
-         
-                
+             
          if ( $this->idExisit($model->getEmailtypeid()) ) {
             
              $stmt = $db->prepare("UPDATE emailtype SET emailtype = :emailtype, active = :active WHERE emailtypeid = :emailtypeid");
@@ -91,8 +86,7 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
                  $this->getLog()->logError($error);
              }
              
-         } 
-         
+         }
          return false;
     }
     
@@ -126,11 +120,7 @@ class EmailTypeDAO extends BaseDAO implements IDAO {
                $values[] = $model;
             }
         }
-        
         $stmt->closeCursor();
          return $values;
     }
-     
-    
-     
 }

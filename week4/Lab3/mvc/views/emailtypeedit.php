@@ -4,16 +4,14 @@
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <body>
-        
+    <body>        
         <?php
-            
-        
+
         if ( isset($scope->view['updated']) ) {
             if( $scope->view['updated'] ) {        
-                 echo 'Email Type has been Updated';
+                 echo 'Email Updated';
             } else {
-                 echo 'Error Email Type was NOT Updated';
+                 echo 'Email NOT Updated';
             }                 
         }
         
@@ -22,8 +20,10 @@
          $emailtypeid = $scope->view['model']->getEmailtypeid();
         ?>
         
-        
-         <h3>Edit email type</h3>
+        <br />
+        <a href="email">Email</a>
+        <br />
+        <h3>Edit Email type</h3>
         <form action="#" method="post">
             <label>Email Type:</label> 
             <input type="text" name="emailtype" value="<?php echo $emailType; ?>" placeholder="" />
@@ -41,14 +41,12 @@
             <input type="submit" value="ADD Page" /> 
         </form>
          
-         
          <?php
          
          if ( count($scope->view['EmailTypes']) <= 0 ) {
             echo '<p>No Data</p>';
         } else {
-            
-            
+
              echo '<table border="1" cellpadding="5"><tr><th>Email Type</th><th>Active</th><th></th><th></th></tr>';
              foreach ($scope->view['EmailTypes'] as $value) {
                 echo '<tr>';
@@ -59,11 +57,7 @@
                 echo '</tr>' ;
             }
             echo '</table>';
-            
         }
-         
-         
-         ?>
-         
+         ?>    
     </body>
 </html>

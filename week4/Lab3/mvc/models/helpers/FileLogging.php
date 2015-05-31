@@ -1,15 +1,8 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of Logging
+ * Description of Log
  *
- * @author MisterSpock
+ * @author 000847713
  */
 
 namespace App\models\services;
@@ -50,8 +43,5 @@ class FileLogging implements ILogging {
     
      public function logError($data) {
        return $this->_log($data, 'error');
-    }
-    
-   
-    
+    } 
 }

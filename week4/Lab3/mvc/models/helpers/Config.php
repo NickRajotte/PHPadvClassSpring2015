@@ -2,7 +2,7 @@
 /**
  * Description of Config
  *
- * @author User
+ * @author 000847713
  */
 
 namespace App\models\services;
@@ -41,5 +41,4 @@ class Config implements IService {
             return $this->getData();
         }
     }
-    
 }

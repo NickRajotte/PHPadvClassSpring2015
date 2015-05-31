@@ -2,7 +2,7 @@
 /**
  * Description of EmailService
  *
- * @author MisterSpock
+ * @author 000847713
  */
 
 namespace App\models\services;
@@ -17,8 +17,7 @@ class EmailService implements IService {
     protected $emailTypeService;
     protected $validator;
     protected $model;
-    
-    function getValidator() {
+                function getValidator() {
         return $this->validator;
     }
 
@@ -42,7 +41,6 @@ class EmailService implements IService {
         $this->emailTypeService = $service;
     }
     
-    
     function getModel() {
         return $this->model;
     }
@@ -50,7 +48,6 @@ class EmailService implements IService {
     function setModel(IModel $model) {
         $this->model = $model;
     }
-
         public function __construct( IDAO $emailDAO, IService $emailTypeService, IService $validator, IModel $model  ) {
         $this->setEmailDAO($emailDAO);
         $this->setEmailTypeService($emailTypeService);
@@ -77,7 +74,6 @@ class EmailService implements IService {
         return false;
     }
     
-    
     public function validate( IModel $model ) {
         $errors = array();
         
@@ -93,11 +89,9 @@ class EmailService implements IService {
             $errors[] = 'Email active is invalid';
         }
        
-        
         return $errors;
     }
-    
-    
+
     public function read($id) {
         return $this->getEmailDAO()->read($id);
     }
@@ -106,7 +100,6 @@ class EmailService implements IService {
         return $this->getEmailDAO()->delete($id);
     }
     
-    
      public function update(IModel $model) {
         
         if ( count($this->validate($model)) === 0 ) {
@@ -114,11 +107,8 @@ class EmailService implements IService {
         }
         return false;
     }
-    
-    
+
      public function getNewEmailModel() {
         return clone $this->getModel();
     }
-    
-    
 }

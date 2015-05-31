@@ -1,11 +1,11 @@
 <?php
-
 /**
- * Description of EmailTypeModel
- * @author MisterSpock
+ * Description of PhotoTypeModel
+ *
+ * @author 000847713
  */
-namespace App\models\services;
 
+namespace App\models\services;
 
 class EmailTypeModel extends BaseModel {
     
@@ -36,6 +36,4 @@ class EmailTypeModel extends BaseModel {
     function setActive($active) {
         $this->active = $active;
     }
-
-
 }

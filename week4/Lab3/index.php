@@ -9,11 +9,9 @@ use Exception;
 
  final class Index {
      
-    
     protected $DI = array();
     protected $log = null;
 
-     
     protected function getLog() {
         return $this->log;
     }
@@ -52,20 +50,17 @@ use Exception;
             }          
         }
         
-        
         protected function runController($page, IService $scope) {
                        
             $class_name = $this->getPageController($page);
             $controller = NULL;
-                       
-            
+ 
             if (array_key_exists($class_name,$this->DI)) {                
                 $controller = $this->DI[$class_name]();                
             } else { 
                 $class_name = "APP\\controller\\$class_name";
                 if (class_exists($class_name)) {
-                    $controller = new $class_name();
-                    
+                    $controller = new $class_name();             
                 }
             }
             
@@ -89,7 +84,6 @@ use Exception;
             }
              
              $this->redirect('page404',array("error"=>$ex->getMessage()));
-            
         }
 
         /**
@@ -116,11 +110,9 @@ use Exception;
                     require_once $classFile;
                     break;
                 } 
-            }  
-             
+            }   
         }
               
-
         protected function getPage() {
             $page = filter_input(INPUT_GET, 'page');            
             if ( NULL === $page || $page === FALSE ) {
@@ -141,10 +133,7 @@ use Exception;
             
             return $page;
         }
-        
-        
-        
-        
+
     /**
      * Generate link.
      * @param string $page target page
@@ -163,12 +152,9 @@ use Exception;
         header('Location: ' . $this->createLink($page, $params));
         die();
     }
-
 }
 
-
-
-       
+ 
     //http://php.net/manual/en/language.oop5.typehinting.php
     function runPage() {
         $_configURL = '.' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.ini.php';
@@ -186,12 +172,11 @@ use Exception;
         $_validator = new Validator();
         
         $_emailTypemodel = new EmailTypeModel();
-        $_emailmodel = new EmailModel();
+        $_emailmodel = new emailModel();
         
         $_emailTypeDAO = new EmailTypeDAO($_pdo->getDB(), $_emailTypemodel, $_log);
         $_emailDAO = new EmailDAO($_pdo->getDB(), $_emailmodel, $_log);
-        
-        
+  
         $_emailTypeService = new EmailTypeService($_emailTypeDAO, $_validator, $_emailTypemodel );
         $_emailService = new EmailService($_emailDAO, $_emailTypeService, $_validator, $_emailmodel);
         
@@ -217,6 +202,5 @@ use Exception;
         // run application!
         $index->run($_scope);
     }
-    
     runPage();
     

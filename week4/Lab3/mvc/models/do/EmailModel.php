@@ -1,9 +1,8 @@
 <?php
-
 /**
  * Description of EmailModel
  *
- * @author MisterSpock
+ * @author 000847713
  */
 
 namespace App\models\services;

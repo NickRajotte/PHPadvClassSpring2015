@@ -5,15 +5,9 @@
         <title></title>
     </head>
     <body>
-        cool
+        <h1>This is the Index Page</h1>
         <?php
-        // put your code here
-        
-        var_dump($scope->view);
-        
-        
         ?>
-        
         <a href="emailtype">Email Type</a>
         <a href="email">Email</a>
     </body>

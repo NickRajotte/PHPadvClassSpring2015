@@ -6,14 +6,12 @@
     </head>
     <body>
         <?php
-        // put your code here
-        
         
          if ( isset($scope->view['updated']) ) {
             if( $scope->view['updated'] ) {        
-                 echo 'Email has been Updated';
+                 echo 'Email Updated';
             } else {
-                 echo 'Email has NOT been Updated';
+                 echo 'Email NOT Updated';
             }                 
         }
         
@@ -22,7 +20,9 @@
             $active = $scope->view['model']->getActive();
             $emailTypeid = $scope->view['model']->getEmailtypeid();
         ?>
-        
+        <br />
+        <a href="emailtype">Email Type</a>
+        <br />
         <h3>Add email</h3>
         <form action="#" method="post">
             <label>Email:</label>            
@@ -50,9 +50,6 @@
             <input type="hidden" name="action" value="update" />
             <input type="submit" value="Submit" />
         </form>
-        
-        
-        
          <br />
          <br />
          
@@ -70,17 +67,12 @@
                  foreach ($scope->view['emails'] as $value) {
                     echo '<tr><td>',$value->getEmail(),'</td><td>',$value->getEmailtype(),'</td><td>',date("F j, Y g:i(s) a", strtotime($value->getLastupdated())),'</td><td>',date("F j, Y g:i(s) a", strtotime($value->getLogged())),'</td>';
                     echo  '<td>', ( $value->getActive() == 1 ? 'Yes' : 'No') ,'</td>';
-                     echo '<td><form action="#" method="post"><input type="hidden"  name="emailid" value="',$value->getEmailid(),'" /><input type="hidden" name="action" value="edit" /><input type="submit" value="EDIT" /> </form></td>';
+                    echo '<td><form action="#" method="post"><input type="hidden"  name="emailid" value="',$value->getEmailid(),'" /><input type="hidden" name="action" value="edit" /><input type="submit" value="EDIT" /> </form></td>';
                     echo '<td><form action="#" method="post"><input type="hidden"  name="emailid" value="',$value->getEmailid(),'" /><input type="hidden" name="action" value="delete" /><input type="submit" value="DELETE" /> </form></td>';
-               
                     echo '</tr>' ;
                 }
                 echo '</table>';
             }
-           
-           
-
-         ?>
-            
+         ?>          
     </body>
 </html>

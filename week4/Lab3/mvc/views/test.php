@@ -5,8 +5,6 @@
         <title></title>
     </head>
     <body>
-        
-        
         <h1>Test</h1>
         <?php
             if ( isset($scope->view['email']) ) {
@@ -20,30 +18,19 @@
                 } else {
                     echo '<p>email is NOT valid</p>';
                 }
-                
             }
-            
-        
         ?>
         <form action="#" method="post">            
             <input type="text" name="email" />            
             <input type="submit" value="submit" />            
         </form>
-        
-        
-        
-        <?php
-        
-        
-        //var_dump($scope->view);
-        
+
+        <?php        
         echo $scope->view['test1'];
         echo $scope->view['test2'];
         if ( isset($scope->view['test3']) ) {
             echo $scope->view['test3'];
         }
-        
-        
         ?>
     </body>
 </html>

@@ -1,9 +1,8 @@
 <?php
-
 /**
  * Description of Util
  *
- * @author MisterSpock
+ * @author 000847713
  */
 
 namespace App\models\services;
@@ -59,7 +58,6 @@ class Util implements IService {
         return $this->getPostParam('action');
     }
       
-    
     /**
      * Get value of the URL param.
      * @return string parameter value

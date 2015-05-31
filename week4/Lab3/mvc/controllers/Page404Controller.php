@@ -1,11 +1,4 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of Page404Controller
  *
@@ -16,7 +9,6 @@ namespace APP\controller;
 
 use App\models\interfaces\IController;
 use App\models\interfaces\IService;
-
 
 class Page404Controller extends BaseController implements IController {
     

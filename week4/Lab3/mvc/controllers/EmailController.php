@@ -48,17 +48,13 @@ class EmailController extends BaseController implements IController {
                 $this->data["errors"] = $this->service->validate($this->data['model']);
                 $this->data["updated"] = $this->service->update($this->data['model']);
                  $viewPage .= 'edit';
-            }
-            
-            
+            }   
         }
-        
-        
+         
         $this->data['emailTypes'] = $this->service->getAllEmailTypes(); 
         $this->data['emails'] = $this->service->getAllEmails(); 
         
         $scope->view = $this->data;
         return $this->view($viewPage,$scope);
-    }
-    
+    } 
 }

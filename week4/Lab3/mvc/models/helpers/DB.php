@@ -2,7 +2,7 @@
 /**
  * Description of DB
  *
- * @author MisterSpock
+ * @author 000847713
  */
 
 namespace App\models\services;
@@ -39,8 +39,7 @@ class DB implements IService {
         }
         
     }
-
-            
+      
     public function getDB() { 
         if ( null != $this->db ) {
             return $this->db;
@@ -59,6 +58,4 @@ class DB implements IService {
      public function closeDB() {        
         $this->db = null;        
     }
-    
-    
 }

@@ -2,7 +2,7 @@
 /**
  * Description of EmailDAO
  *
- * @author MisterSpock
+ * @author 000847713
  */
 
 namespace App\models\services;
@@ -12,7 +12,6 @@ use App\models\interfaces\IModel;
 use App\models\interfaces\ILogging;
 use \PDO;
 
-
 class EmailDAO extends BaseDAO implements IDAO {
         
      public function __construct( PDO $db, IModel $model, ILogging $log ) {        
@@ -20,7 +19,6 @@ class EmailDAO extends BaseDAO implements IDAO {
         $this->setModel($model);
         $this->setLog($log);
     }
-    
     
     public function idExisit($id) {
                 
@@ -47,12 +45,9 @@ class EmailDAO extends BaseDAO implements IDAO {
              $model->map($results);
         }
          
-        return $model;
-         
-        
+        return $model;    
     }
-    
-    
+
     public function create(IModel $model) {
                  
          $db = $this->getDB();
@@ -71,12 +66,10 @@ class EmailDAO extends BaseDAO implements IDAO {
              }
          }
                   
-         
-         return false;
+        return false;
     }
     
-    
-     public function update(IModel $model) {
+    public function update(IModel $model) {
                  
          $db = $this->getDB();
          
@@ -85,8 +78,7 @@ class EmailDAO extends BaseDAO implements IDAO {
                         ":emailtypeid" => $model->getEmailtypeid(),
                         ":emailid" => $model->getEmailid()
                     );
-         
-                
+             
          if ( $this->idExisit($model->getEmailid()) ) {
             
              $stmt = $db->prepare("UPDATE email SET email = :email, emailtypeid = :emailtypeid,  active = :active, lastupdated = now() WHERE emailid = :emailid");
@@ -96,10 +88,8 @@ class EmailDAO extends BaseDAO implements IDAO {
              } else {
                  $error = implode(",", $db->errorInfo());
                  $this->getLog()->logError($error);
-             }
-             
+             } 
          } 
-         
          return false;
     }
     
@@ -114,7 +104,6 @@ class EmailDAO extends BaseDAO implements IDAO {
             $error = implode(",", $db->errorInfo());
             $this->getLog()->logError($error);
         }
-         
          return false;
     }
     
@@ -134,10 +123,7 @@ class EmailDAO extends BaseDAO implements IDAO {
                $values[] = $model;
             }
         }
-        
         $stmt->closeCursor();
          return $values;
     }
-    
-    
 }

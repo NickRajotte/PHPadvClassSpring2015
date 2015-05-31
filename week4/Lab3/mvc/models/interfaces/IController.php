@@ -1,8 +1,7 @@
 <?php
-
 /**
  *
- * @author MisterSpock
+ * @author 000847713
  */
 
 namespace App\models\interfaces;

@@ -1,15 +1,8 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of EmailTypeService
  *
- * @author MisterSpock
+ * @author 000847713
  */
 
 namespace App\models\services;
@@ -40,7 +33,6 @@ class EmailTypeService implements IService {
          $this->model = $model;
      }
      
-     
      function getDAO() {
          return $this->DAO;
      }
@@ -54,8 +46,7 @@ class EmailTypeService implements IService {
         $this->setValidator($validator);
         $this->setModel($model);
     }
-    
-    
+
     public function getAllRows($limit = "", $offset = "") {
         return $this->getDAO()->getAllRows($limit, $offset);
     }
@@ -96,15 +87,11 @@ class EmailTypeService implements IService {
                
         if ( !$this->getValidator()->activeIsValid($model->getActive()) ) {
             $errors[] = 'Email active is invalid';
-        }
-       
-        
+        }      
         return $errors;
     }
     
     public function getNewEmailTypeModel() {
         return clone $this->getModel();
     }
-    
-    
 }
