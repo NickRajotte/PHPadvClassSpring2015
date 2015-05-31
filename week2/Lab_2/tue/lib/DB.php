@@ -1,19 +1,13 @@
 <?php
-namespace week2\nrajotte;
-use PDO;
-/**
- * DB is the general class to connection to our database
- *
- * @author MisterSpock
- */
 
+namespace nrajotte\week2;
+use \PDO;
 
 class DB {
     
     protected $db = null;
     private $dbConfig = array();
-   
-     
+
     /**
     * The contructor requires.
     *    
@@ -50,7 +44,16 @@ class DB {
         }
         return $this->db;        
     }
-    
+    public function db(){
+        $dbConfig=  array(
+            "DB_DNS"=> 'mysql:host=localhost;port=3306;dbname=PHPadvClassSpring2015',
+            "DB_USER"=>'root',
+            "DB_PASSWORD"=>''
+        );
+        $pdo = new DB($dbConfig);
+        $db = $pdo->getDB();
+        return $db;
+    }
     /**
     * A method to close our database connection.
     *    
@@ -59,6 +62,4 @@ class DB {
      public function closeDB() {        
         $this->db = null;        
     }
-    
-    
 }

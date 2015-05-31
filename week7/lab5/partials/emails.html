@@ -1,0 +1,76 @@
+
+
+<h1>Emails</h1>
+
+
+<div class="content">
+
+    <h3>Add Email</h3>
+
+        <label>Email:</label>
+        <input type="text" name="email" value="" placeholder="" ng-model="email" />
+
+        <label>Active:</label>
+        <input type="number" max="1" min="0" name="active" value="" ng-model="active" />
+
+        <label>Email Type:</label>
+        <select name="emailtypeid" ng-model="emailtype" ng-options="email.emailtype for email in emailTypes"></select>
+
+        <input type="hidden"  name="emailid" value="" />
+        <input type="submit" value="Submit" ng-click="addEmail()" />
+
+
+    <br />
+    <br />
+
+
+    <table class="gridtable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Email Type</th>
+                <th>Active</th>
+                <th>logged</th>
+                <th>last updated</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tr ng-repeat="email in emails">
+            <td>{{email.emailid}}</td>
+            <td>{{email.email}}</td>
+            <td>{{email.emailtype}}</td>
+            <td>{{email.active | activeString}}</td>
+            <td>{{email.logged}}</td>
+            <td>{{email.lastupdated}}</td>
+            <td><button ng-click="showUpdate($index)">Update</button></td>
+            <td><button ng-click="deleteEmail(email.emailid)">Delete</button></td>
+        </tr>
+    </table>
+
+     <div ng-show="update">
+        <h3>Update Email</h3>
+
+        <label>Email:</label>
+        <input type="text" name="updateemail" value="" placeholder="" ng-model="updateemail" />
+
+        <label>Email Type:</label>
+        <select name="updateemailtypeid" ng-model="updateemailtype" ng-options="email.emailtype for email in emailTypes"></select>
+
+        <label>Active:</label>
+        <input type="number" max="1" min="0" name="updateactive" value="" ng-model="updateactive" />
+
+        <input type="hidden"  name="updateemailid" value="" ng-model="updateemailid" />
+
+        <input type="submit" value="Submit" ng-click="updateEmail()" />
+        <input type="submit" value="Cancel" ng-click="update=false" />
+    </div>
+
+
+</div>
+
+<div class="content footer">
+    <a href="#/emailtypes">Email Types</a>
+</div>

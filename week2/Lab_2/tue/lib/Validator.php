@@ -1,12 +1,7 @@
 <?php
-namespace week2\nrajotte;
-/**
- * Validator Class
- * 
- * A collection of functions used to validate data
- *
- * @author MisterSpock
- */
+
+namespace nrajotte\week2;
+
 class Validator {
 
     /**

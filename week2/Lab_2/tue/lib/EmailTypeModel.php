@@ -1,19 +1,8 @@
 <?php
-namespace week2\nrajotte;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- * Description of EmailTypeModel
- *
- * @author MisterSpock
- */
-class EmailTypeModel implements IModel {
-    //put your code here
-    
+namespace nrajotte\week2;
+
+class EmailTypeModel implements IModel{
     private $emailtypeid;
     private $emailtype;
     private $active;
@@ -53,7 +42,7 @@ class EmailTypeModel implements IModel {
         return $this;
     }
 
-        public function map(Array $values) {
+    public function map(Array $values) {
         
         if ( array_key_exists('emailtypeid', $values) ) {
             $this->setEmailtypeid($values['emailtypeid']);
@@ -68,4 +57,5 @@ class EmailTypeModel implements IModel {
         }
         return $this;
     }
+
 }

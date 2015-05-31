@@ -1,10 +1,7 @@
 <?php
-namespace week2\nrajotte;
-/**
- * Util - functions used to help with the over all application
- *
- * @author MisterSpock
- */
+
+namespace nrajotte\week2;
+
 class Util {
     
     

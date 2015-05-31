@@ -1,21 +1,11 @@
 <?php
-namespace week2\nrajotte;
-use PDO;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- * Description of EmailTypeDAO
- *
- * @author MisterSpock
- */
-class EmailTypeDAO implements IDAO  {
-    //put your code here
+namespace nrajotte\week2;
+use \PDO;
+
+class EmailTypeDAO implements IDAO {
     
-     private $DB = null;
+    private $DB = null;
 
     public function __construct( PDO $db ) {        
         $this->setDB($db);    
@@ -30,7 +20,6 @@ class EmailTypeDAO implements IDAO  {
     }
     
     public function idExisit($id) {
-        
         $db = $this->getDB();
         $stmt = $db->prepare("SELECT * FROM emailtype WHERE emailtypeid = :emailtypeid");
          
@@ -57,21 +46,18 @@ class EmailTypeDAO implements IDAO  {
     
     
     public function save(IModel $model) {
-                 
          $db = $this->getDB();
          
          $values = array( ":emailtype" => $model->getEmailtype(),
                           ":active" => $model->getActive()
                     );
-         
-                
+
          if ( $this->idExisit($model->getEmailtypeid()) ) {
              $values[":emailtypeid"] = $model->getEmailtypeid();
              $stmt = $db->prepare("UPDATE emailtype SET emailtype = :emailtype, active = :active WHERE emailtypeid = :emailtypeid");
          } else {             
              $stmt = $db->prepare("INSERT INTO emailtype SET emailtype = :emailtype, active = :active");
          }
-         
           
          if ( $stmt->execute($values) && $stmt->rowCount() > 0 ) {
             return true;
@@ -93,7 +79,6 @@ class EmailTypeDAO implements IDAO  {
          return false;
     }
 
-   
     public function getAllRows() {
        
         $values = array();         
@@ -116,4 +101,5 @@ class EmailTypeDAO implements IDAO  {
         $stmt->closeCursor();         
          return $values;
      }
+
 }

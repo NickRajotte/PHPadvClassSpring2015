@@ -1,20 +1,8 @@
 <?php
-namespace week2\nrajotte;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- * Description of EmailModel
- *
- * @author MisterSpock
- *
- */
+namespace nrajotte\week2;
+
 class EmailModel implements IModel {
-    //put your code here
-    
     private $emailid;
     private $email;
     private $emailtypeid;
@@ -24,116 +12,89 @@ class EmailModel implements IModel {
     private $lastupdated;
     private $active;
     
-    function getEmailid() {
+    function getEmailid(){
         return $this->emailid;
     }
-
-    function getEmail() {
+    function getEmail(){
         return $this->email;
     }
-
-    function getEmailtypeid() {
+    function getEmailtypeid(){
         return $this->emailtypeid;
     }
-
-    function getEmailtype() {
+    function getEmailtype(){
         return $this->emailtype;
     }
-
-    function getEmailtypeactive() {
+    function getEmailtypeactive(){
         return $this->emailtypeactive;
     }
-
-    function getLogged() {
+    function getEmaillogged(){
         return $this->logged;
     }
-
-    function getLastupdated() {
+    function getEmaillastupdated(){
         return $this->lastupdated;
     }
-
-    function getActive() {
+    function getEmailactive(){
         return $this->active;
     }
-
-    function setEmailid($emailid) {
-        $this->emailid = $emailid;
+    function setEmailid($emailid){
+        $this->emailid=$emailid;
     }
-
-    function setEmail($email) {
-        $this->email = $email;
+    function setEmail($email){
+        $this->email=$email;
     }
-
-    function setEmailtypeid($emailtypeid) {
-        $this->emailtypeid = $emailtypeid;
+    function setEmailtypeid($emailtypeid){
+        $this->emailtypeid=$emailtypeid;
     }
-
-    function setEmailtype($emailtype) {
-        $this->emailtype = $emailtype;
+    function setEmailtype($emailtype){
+        $this->emailtype=$emailtype;
     }
-
-    function setEmailtypeactive($emailtypeactive) {
-        $this->emailtypeactive = $emailtypeactive;
+    function setEmailtypeactve($emailtypeactive){
+        $this->emailtypeactive=$emailtypeactive;
     }
-
-    function setLogged($logged) {
-        $this->logged = $logged;
+    function setLogged($logged){
+        $this->logged=$logged;
     }
-
-    function setLastupdated($lastupdated) {
-        $this->lastupdated = $lastupdated;
+    function setLastupdated($lastupdated){
+        $this->lastupdated=$lastupdated;
     }
-
-    function setActive($active) {
+    function setActive($active){
         $this->active = $active;
     }
-
-        /*
-    * When a class has to implement an interface those functions must be created in the class.
-    */
-    public function reset() {
+    public function reset(){
         $this->setEmailid('');
         $this->setEmail('');
         $this->setEmailtypeid('');
         $this->setEmailtype('');
-        $this->setEmailtypeactive('');
+        $this->setEmailtypeactve('');
         $this->setLogged('');
         $this->setLastupdated('');
         $this->setActive('');
         return $this;
     }
 
-        public function map(array $values) {
-        
-        if ( array_key_exists('emailid', $values) ) {
+    public function map(array $values){
+        if(array_key_exists('emailid', $values)){
             $this->setEmailid($values['emailid']);
         }
-        
-        if ( array_key_exists('email', $values) ) {
+        if(array_key_exists('email', $values)){
             $this->setEmail($values['email']);
         }
-        
-        if ( array_key_exists('emailtypeid', $values) ) {
+        if(array_key_exists('emailtypeid', $values)){
             $this->setEmailtypeid($values['emailtypeid']);
         }
-        
-        if ( array_key_exists('emailtype', $values) ) {
+        if(array_key_exists('emailtype', $values)){
             $this->setEmailtype($values['emailtype']);
         }
-        
-        if ( array_key_exists('emailtypeactive', $values) ) {
-            $this->setEmailtypeactive($values['emailtypeactive']);
+        if(array_key_exists('emailtypeactive', $values)){
+            $this->setEmailtypeactve($values['emailtypeactive']);
         }
-        
-        if ( array_key_exists('logged', $values) ) {
+        if(array_key_exists('logged', $values)){
             $this->setLogged($values['logged']);
         }
-        
-        if ( array_key_exists('lastupdated', $values) ) {
+        if(array_key_exists('lastupdated', $values)){
             $this->setLastupdated($values['lastupdated']);
         }
-        
-        if ( array_key_exists('active', $values) ) {
+        if(array_key_exists('active', $values)){
             $this->setActive($values['active']);
         }
         return $this;

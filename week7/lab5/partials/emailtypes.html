@@ -1,0 +1,56 @@
+
+
+<h1>Email Types</h1>
+
+
+<div class="content">
+
+    <h3>Add Email Type</h3>
+    <label>Email Type:</label>
+    <input type="text" name="emailtype" value="" placeholder="" ng-model="emailtype" />
+     <label>Active:</label>
+    <input type="number" max="1" min="0" name="Active" value="" ng-model="active" />
+
+    <input type="submit" value="Submit" ng-click="addEmailType()" />
+
+
+    <br />
+    <br />
+
+    <table class="gridtable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email Type</th>
+                <th>Active</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tr ng-repeat="emailtype in emailTypes">
+            <td>{{emailtype.emailtypeid}}</td>
+            <td>{{emailtype.emailtype}}</td>
+            <td>{{emailtype.active | activeString}}</td>
+            <td><button ng-click="showUpdate($index)">Update</button></td>
+            <td><button ng-click="deleteEmailType(emailtype.emailtypeid)">Delete</button></td>
+        </tr>
+    </table>
+
+
+
+    <div ng-show="update">
+        <h3>Update Email Type</h3>
+        <label>Email Type:</label>
+        <input type="text" name="updateemailtype" value="" placeholder="" ng-model="updateemailtype" />
+        <label>Active:</label>
+        <input type="number" max="1" min="0" name="updateactive" value="" ng-model="updateactive" />
+        <input type="hidden"  name="updateemailtypeid" value="" ng-model="updateemailtypeid" />
+        <input type="submit" value="Submit" ng-click="updateEmailType()" />
+        <input type="submit" value="Cancel" ng-click="update=false" />
+    </div>
+
+</div>
+
+<div class="content footer">
+    <a href="#/emails">Emails</a>
+</div>
