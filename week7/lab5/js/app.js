@@ -9,8 +9,8 @@ var myApp = angular.module('myApp', [
 
 myApp.constant('config', {
     "endpoints": {
-       "emails" : 'http://localhost:8080/PHPadvClassSpring2015/week5/lab4/api/v1/emails/',
-       "emailtypes" : 'http://localhost:8080/PHPadvClassSpring2015/week5/lab4/api/v1/emailtypes/'
+       "emails" : 'http://localhost:80/PHPadvClassSpring2015/week5/lab4/api/v1/emails/',
+       "emailtypes" : 'http://localhost:80/PHPadvClassSpring2015/week5/lab4/api/v1/emailtypes/'
     },
     "models" : {
         "emailtype" : {

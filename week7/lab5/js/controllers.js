@@ -1,5 +1,6 @@
 'use strict';
 
+
 var appControllers = angular.module('appControllers', []);
 
 appControllers.controller('EmailTypesCtrl', ['$scope', '$log', 'emailTypesProvider',
