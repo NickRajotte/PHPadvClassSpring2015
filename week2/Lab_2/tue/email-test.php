@@ -51,7 +51,7 @@ include './bootstrap.php'; ?>
         <div class="container">
             <div class="col-md-6 col-md-offset-3">
                 <h3>Add email</h3>
-                <a href="/PHPadvClassSpring2015/Lab2/tue/emailtype-test.php" class="btn btn-default">Add EmailType</a>
+                <a href="/PHPadvClassSpring2015/week2/Lab_2/tue/emailtype-test.php" class="btn btn-default">Add EmailType</a>
                    <br /><br />
             </div>
             <form action="#" method="post">
