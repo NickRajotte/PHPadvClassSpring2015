@@ -32,7 +32,7 @@
             Email : <input type="email" name="email" value="" /> <br />
             Password : <input type="password" name="password" value="" /> <br /> 
             <br />
-            <input type="submit" value="Signup" />
+            <input type="submit" value="Login" />
             
         </form>
     </body>
